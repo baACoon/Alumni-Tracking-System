@@ -11,8 +11,8 @@
     <div class="bg-image"></div>
 
     <div class="logo">
-        <img src="../design/image/Tuplogo.png" alt="logo_1" class="logo-1">
-        <img src="../design/image/tupmanila_assoc.png" alt="" class="logo-2">
+        <img src="../image/Tuplogo.png" alt="logo_1" class="logo-1">
+        <img src="../image/tupmanila_assoc.png" alt="" class="logo-2">
     </div>
 
     <div class="system-title">
