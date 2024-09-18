@@ -21,54 +21,44 @@
     </div>
 
     <div class="btn">
-        <button class="login-btn" id="loginBtn"><a href="#">LOGIN</a></button> <br>
-        <button class="register-btn" id="registerBtn"><a href="#">REGISTER</a></button>
+        <!-- Form that submits to the same page to trigger the modal -->
+        <form method="POST">
+            <button class="login-btn" name="modal" value="login">LOGIN</button> <br>
+            <button class="register-btn" name="modal" value="register">REGISTER</button>
+        </form>
     </div>
 
-    <div id="modal-container"></div>
+    <div id="modal-container">
+        <?php
+        // Check if a button has been pressed
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            if ($_POST['modal'] == 'login') {
+                include 'login.php'; // Load the login modal
+            } elseif ($_POST['modal'] == 'register') {
+                include 'register.php'; // Load the register modal
+            }
+        }
+        ?>
+    </div>
 
     <script>
-            // Get modal container
-            var modalContainer = document.getElementById("modal-container");
+        document.addEventListener("DOMContentLoaded", function() {
+            // Close modal on clicking the close button
+            document.querySelectorAll(".close").forEach(function(closeBtn) {
+                closeBtn.onclick = function() {
+                    document.getElementById("modal-container").innerHTML = ''; // Clear modal content
+                }
+            });
 
-            // Get buttons
-            var loginBtn = document.getElementById("loginBtn");
-            var registerBtn = document.getElementById("registerBtn");
-
-            // Function to load modal content dynamically
-            function loadModal(url, closeId) {
-                fetch(url)
-                    .then(response => response.text())
-                    .then(data => {
-                        modalContainer.innerHTML = data;
-
-                        // Add event listener for closing the modal
-                        var closeBtn = document.getElementById(closeId);
-                        closeBtn.onclick = function() {
-                            modalContainer.innerHTML = ''; // Clear modal content
-                        }
-
-                        // Close modal when clicking outside the content
-                        window.onclick = function(event) {
-                            if (event.target.classList.contains("modal")) {
-                                modalContainer.innerHTML = ''; // Close modal
-                            }
-                        }
-                    })
-                    .catch(error => console.error("Error loading modal:", error));
-            }
-
-            // Event listeners for buttons
-            loginBtn.onclick = function() {
-                loadModal("login.php", "loginClose");
-            }
-
-            registerBtn.onclick = function() {
-                loadModal("register.php", "registerClose");
-            }
-
+            // Close modal when clicking outside the content
+            window.onclick = function(event) {
+                if (event.target.classList.contains("modal")) {
+                    document.getElementById("modal-container").innerHTML = ''; // Close modal
+                }
+            };
+        });
     </script>
-    
-    
+
+
 </body>
 </html>

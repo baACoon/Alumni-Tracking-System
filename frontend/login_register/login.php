@@ -1,3 +1,7 @@
+<?php
+include($_SERVER['DOCUMENT_ROOT'] . '/Alumni-Tracking-System/backend/log_reg.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,33 +15,32 @@
         <div class="modal-content">
             <span class="close" id="loginClose">&times;</span>
             <h2>Login Form</h2>
-            <form>
-                    <!-- Course Selection -->
-                <label for="course">Course:</label>
-                <select id="course" name="course">
-                    <option value="BSIT">BS in Information Technology</option>
-                    <option value="BSEE">BS in Electrical Engineering</option>
-                    <option value="BSME">BS in Mechanical Engineering</option>
-                    <option value="BSCE">BS in Civil Engineering</option>
-                    <option value="BSCpE">BS in Computer Engineering</option>
-                    <option value="BSIE">BS in Industrial Engineering</option>
-                    <option value="BSA">BS in Architecture</option>
+            <!-- Ensure the form uses POST and points to the same file or another PHP script -->
+            <form method="POST" action="login.php">
+
+                <label for="college">College:</label>
+                <select id="college" name="college">
+                    <option value="COE">College of Engineering</option>
+                    <option value="COS">College of Science</option>
+                    <option value="CIE">College of Industrial Education</option>
+                    <option value="CLA">College of Liberal Arts</option>
+                    <option value="CAFA">College of Architecture and Fine Arts</option>
                 </select><br><br>
 
-                <label for="username">TUP-ID:</label>
-                <input type="text" id="username" name="TUP-ID" placeholder="TUPM - ## - ####"><br><br>
+                <label for="tup_id">TUP-ID:</label>
+                <!-- Ensure the name attribute is correct -->
+                <input type="text" id="tup_id" name="tup_id" placeholder="TUPM - ## - ####" required><br><br>
 
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password"><br><br>
+                <input type="password" id="password" name="password" required><br><br>
 
                 <label for="birthdate">Birthdate:</label>
-                <input type="date" id="birthdate" name="birthdate"><br><br>
-                <button type="submit">Login</button>
+                <input type="date" id="birthdate" name="birthdate" required><br><br>
+
+                <button type="submit" name="login_user">Login</button> <!-- Set the correct name for login -->
+                <span>Forgot Password? <a href="#">click here</a></span>
             </form>
         </div>
     </div>
-
-
-    
 </body>
 </html>
