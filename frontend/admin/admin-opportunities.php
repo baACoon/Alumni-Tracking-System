@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Opportunities</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../admin/style/dashboard.css">
 </head>
@@ -29,5 +29,7 @@
             </div>
         </div>
     </header>
+
+    <h1>Opportunities</h1>
 </body>
 </html>
