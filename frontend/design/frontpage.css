@@ -3,12 +3,23 @@
 );
 
 *{
-    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: "Montserrat", sans-serif;
 }
 
 body{
-    /*background:linear-gradient(to right, rgba(236, 18, 18, 0.85), rgba(102, 1, 1, 0.4)); */
-    background-color: #4b111c;
+    background-image: linear-gradient(to right, rgba(32, 5, 5, 0.85), rgba(73, 17, 17, 0.4)), url('../image/TUPLOGOGRND.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 180vh;
+    overflow: hidden;
+}
+
+.frontpg-container{
+    position: absolute;
 }
 
 .logo img{
@@ -34,7 +45,7 @@ body{
 }
 
 .system-title h2{
-    font-weight: lighter;
+    font-weight: 400;
     margin: 0%;
 }
 

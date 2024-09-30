@@ -1,0 +1,96 @@
+@import url(
+    'https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100900&display=swap'
+);
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body{
+    margin: 0%;
+    padding: 0%;
+}
+
+.sidebar {
+    position: absolute;
+    width: 290px;
+    height: 500px;
+    top: 131px;
+    left: 0px;
+    background-color: #D9D9D9;
+    box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    padding-top: 20px;
+    
+}
+
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.sidebar nav ul li {
+    padding: 10px 0;
+    margin: 10px;
+    text-align: left;
+}
+
+.sidebar nav ul li a {
+    color: black;
+    text-decoration: none;
+    display: block; /* Ensure the background covers the entire clickable area */
+    padding: 10px; /* Adds consistent padding */
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.sidebar nav ul li a:hover, 
+.sidebar nav ul li a:active, 
+.sidebar nav ul li a:focus {
+    background-color: #b0b0b0; /* Light gray background color */
+    padding-left: 20px; /* Indent the text slightly on hover */
+    font-weight: bold;
+    color: black;
+}
+
+
+/*TABLE */
+.survey-table-container {
+
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: -1em;
+    margin-left: 20em;
+    position: absolute;
+
+}
+
+.survey-table {
+    width: 260%;
+    border-collapse: collapse;
+    border-radius: 3px;
+}
+
+
+.survey-table th, .survey-table td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #dddddd;
+}
+.survey-table tr{
+    background: #faf9f9;
+    border-bottom: 2px  solid #000000;
+    border-radius: 2px;
+  }
+
+.survey-table th {
+    background-color: #C31D3C;            
+    text-align: center;
+    color: white;
+    font-weight: 300;
+
+}
+

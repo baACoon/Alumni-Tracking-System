@@ -72,7 +72,7 @@ if (isset($_POST['reg_user'])) {
         if (mysqli_query($db, $query)) {
             $_SESSION['tup_id'] = $tup_id;
             $_SESSION['success'] = "You are now logged in";
-            header('location: ../frontend/home.php'); // Redirect to homepage after successful registration
+            header('location: ../client-page/home.php'); // Redirect to homepage after successful registration
         } else {
             die("Error: " . mysqli_error($db)); // Display error if insertion fails
         }
@@ -110,7 +110,7 @@ if (isset($_POST['login_user'])) {
         if (mysqli_num_rows($results) == 1) {
             $_SESSION['tup_id'] = $tup_id;
             $_SESSION['success'] = "You are now logged in";
-            header('location: ../frontend/home.php'); // Redirect to the home page
+            header('location: ../client-page/home.php'); // Redirect to the home page
         } else {
             array_push($errors, "Wrong TUP-ID/password combination");
         }

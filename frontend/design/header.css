@@ -1,0 +1,72 @@
+/* HEADER */
+.header-logo{
+    margin-top: 0.5em;
+    margin-left: 1em;
+}
+
+.header-logo-1 img {
+    width: 4%;
+    position: relative; /* Add position to enable z-index */
+    z-index: 2; /* Higher value makes it appear on top */
+}
+
+.header-logo-2 img {
+    background-color: white;
+    border-radius: 50%;/* This makes the image circular or adds a round effect */
+    width: 8%;
+    position: absolute;
+    margin-top: -3.5em;
+    margin-left: 10px;
+    z-index: 1; /* Lower value so it's below logo 1 */
+}
+
+.header-banner{
+    margin-left: 20em;
+    margin-top: -5em;
+    font-size: 13px;
+}
+
+.header-banner h2{
+    margin-top: -10px;
+    font-weight: 300;
+}
+
+.navbar {
+    width: 100%;
+    background-color: #C31D3C; /* TUP maroon color */
+    padding: 0;
+    margin: 0;
+    margin-top: -5px;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Center the other buttons */
+    align-items: center;
+    position: relative;
+}
+
+.navbar ul li {
+    margin: 0 10px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    display: block;
+    font-size: 1em;
+}
+
+.navbar ul li a:hover {
+    background-color: #5D0E1D;
+}
+
+.navbar .profile-btn{
+    margin-left: auto; /* Push profile to the right */
+    position: absolute;
+    right: 0; /* Align profile to the right side of the navbar */
+}
