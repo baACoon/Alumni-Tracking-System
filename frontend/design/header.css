@@ -1,4 +1,9 @@
 /* HEADER */
+.header-container{
+    position: relative; /* Ensure the header stays above the sidebar */
+
+    z-index: 1000; /* Higher z-index so it stays above the sidebar */
+}
 .header-logo{
     margin-top: 0.5em;
     margin-left: 1em;
@@ -59,6 +64,7 @@
     padding: 10px 20px;
     display: block;
     font-size: 1em;
+    font-style: 500;
 }
 
 .navbar ul li a:hover {

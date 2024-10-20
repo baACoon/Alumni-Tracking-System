@@ -1,8 +1,5 @@
 <?php 
-// Include the server-side logic
 include($_SERVER['DOCUMENT_ROOT'] . '/Alumni-Tracking-System/backend/log_reg.php');
-
-// Include the errors.php file to display validation errors
 include($_SERVER['DOCUMENT_ROOT'] . '/Alumni-Tracking-System/frontend/errors.php');
 ?>
 
@@ -23,8 +20,8 @@ include($_SERVER['DOCUMENT_ROOT'] . '/Alumni-Tracking-System/frontend/errors.php
             <span class="close" id="registerClose">&times;</span>
             <h2>Register Form</h2>
 
-            <form method="post" action="register.php"> <!-- Ensure the form submits to register.php -->
-                <?php include($_SERVER['DOCUMENT_ROOT'] . '/Alumni-Tracking-System/frontend/errors.php'); ?> <!-- Display errors -->
+            <form method="post" action="register.php">
+                <?php include($_SERVER['DOCUMENT_ROOT'] . '/Alumni-Tracking-System/frontend/errors.php'); ?>
 
                 <label for="college">College:</label>
                 <select id="college" name="college">
@@ -61,7 +58,7 @@ include($_SERVER['DOCUMENT_ROOT'] . '/Alumni-Tracking-System/frontend/errors.php
                 <label for="birthdate">Birthdate:</label>
                 <input type="date" id="birthdate" name="birthdate"><br><br>
 
-                <button type="submit" name="reg_user">Register</button> <!-- Correct button name -->
+                <button type="submit" name="reg_user">Register</button>
             </form>
         </div>
     </div>

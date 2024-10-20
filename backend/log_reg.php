@@ -68,14 +68,11 @@ if (isset($_POST['reg_user'])) {
         $query = "INSERT INTO users (college, course, tup_id, email, password, birthdate) 
                   VALUES ('$college', '$course', '$tup_id', '$email', '$password', '$birthdate')";
 
-        // Execute the query and check if it is successful
-        if (mysqli_query($db, $query)) {
-            $_SESSION['tup_id'] = $tup_id;
-            $_SESSION['success'] = "You are now logged in";
-            header('location: ../client-page/home.php'); // Redirect to homepage after successful registration
-        } else {
-            die("Error: " . mysqli_error($db)); // Display error if insertion fails
-        }
+        $result = mysqli_query($db, $query);
+        $_SESSION['tup_id'] = $tup_id;
+        $_SESSION['success'] = "You are now registered";
+        $_SESSION['show_popup'] = true; //set popup flag
+        header('location: ../client-page/home.php'); // Redirect to homepage after successful registration
     }
 }
 
@@ -110,6 +107,7 @@ if (isset($_POST['login_user'])) {
         if (mysqli_num_rows($results) == 1) {
             $_SESSION['tup_id'] = $tup_id;
             $_SESSION['success'] = "You are now logged in";
+            $_SESSION['show_popup'] = true; //set popup flag
             header('location: ../client-page/home.php'); // Redirect to the home page
         } else {
             array_push($errors, "Wrong TUP-ID/password combination");

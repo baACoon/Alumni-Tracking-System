@@ -31,7 +31,6 @@
         </div>
     </div>
 
-
     <div id="modal-container">
         <?php
         // Check if a button has been pressed
@@ -47,22 +46,29 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Close modal on clicking the close button
-            document.querySelectorAll(".close").forEach(function(closeBtn) {
-                closeBtn.onclick = function() {
-                    document.getElementById("modal-container").innerHTML = ''; // Clear modal content
-                }
-            });
+            function openModal() {
+                const modal = document.querySelector(".modal");
+                if (modal) {
+                    modal.style.display = "block"; // Ensure the modal is displayed
 
-            // Close modal when clicking outside the content
-            window.onclick = function(event) {
-                if (event.target.classList.contains("modal")) {
-                    document.getElementById("modal-container").innerHTML = ''; // Close modal
+                    // Close modal on clicking the close button
+                    document.querySelectorAll(".close").forEach(function(closeBtn) {
+                        closeBtn.onclick = function() {
+                            document.getElementById("modal-container").innerHTML = ''; // Clear modal content
+                        }
+                    });
+
+                    // Close modal when clicking outside the content
+                    window.onclick = function(event) {
+                        if (event.target.classList.contains("modal")) {
+                            document.getElementById("modal-container").innerHTML = ''; // Close modal
+                        }
+                    };
                 }
-            };
+            }
+
+            openModal(); // Automatically open the modal when content is loaded
         });
     </script>
-
-
 </body>
 </html>

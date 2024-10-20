@@ -1,8 +1,14 @@
+<?php
+include($_SERVER['DOCUMENT_ROOT'] . '/Alumni-Tracking-System/backend/log_reg.php');
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../design/popup.css">
     <link rel="stylesheet" href="../design/home.css">
     <link rel="stylesheet" href="../design/header.css">
     <link rel="stylesheet" href="../design/footer.css">
@@ -11,7 +17,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>TUP MANILA | Home</title>
 </head>
-<body>  
+<body <?php if (isset($_SESSION['show_popup'])) echo 'class="popup-visible"'; ?>>  
+    
 <!-- header.php -->
 <div class="header-container">
     <div class="header-logo">
@@ -40,6 +47,34 @@
         </ul>
     </nav>
 </div>
+
+            <!-- Popup logic -->
+            <?php if (isset($_SESSION['show_popup'])) : ?>
+                <?php unset($_SESSION['show_popup']); // Unset the session variable after showing the popup ?>
+                <div class="pop-background" id="popBackground">
+                    <div class="popup" id="welcomePopup">
+                        <p>
+                            <?php
+                                // Display different messages based on registration or login
+                                if (isset($_SESSION['success'])) {
+                                    echo $_SESSION['success']; // For registration, display "You are now registered"
+                                } elseif (isset($_SESSION['tup_id'])) {
+                                    echo "Welcome, " . $_SESSION['tup_id'] . "!"; // For login, greet with the user's TUP-ID
+                                }
+                            ?>
+                        </p>
+                        <button class="popbutton" onclick="closePopup()">omki</button>
+                    </div>
+                </div>
+            <?php endif; ?>
+            <script>
+                function closePopup() {
+                    var background = document.getElementById('popBackground');
+                    background.style.display = 'none';  // This hides the popup background
+                    document.body.classList.remove('popup-visible'); // Re-enable scrolling
+                }
+            </script>
+
 
 <div class="home-bg">
 

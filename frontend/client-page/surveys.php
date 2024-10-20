@@ -46,23 +46,29 @@
     <aside class="sidebar">
         <nav>
             <ul>
-                <li><a href="myprofile.php">Pending Surveys</a></li>
+                <li><a href="surveys.php">Pending Surveys</a></li>
                 <li><a href="history.php">Completed Surveys</a></li>
             </ul>
         </nav>
     </aside>
 
+
+     <!-- TABLE -->
     <div class="survey-table-container">
         <h2>Pending Surveys</h2>
         <table class="survey-table">
             <thead>
                 <tr>
-                    <th >No. </th>
+                    <th>No. </th>
                     <th>TITLE</th>
                     <th>DATE SURVEY RECEIVED</th>
                 </tr>
             </thead>
-            <tbody>               
+            <tbody>
+                <tr>
+                    <td>testing</td>
+                    <td><a href="tracersurveyform.php">Tracer Survey Form (2024)</a></td> <!-- PANSAMANTALA LANG MUNA DAPAT GALING SA ADMIN TO -->
+                </tr>               
             </tbody>
         </table>
     </div>
